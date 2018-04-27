@@ -1,0 +1,15 @@
+<% if @results.class == String %>
+	<h3><%= @results%></h3>
+<% else %>
+	<% @results.each do |restaurant| %>
+		<h3><%= restaurant["aka_name"] %></h3>
+		<h6><%= restaurant["address"] %></h6>
+		<p><%= restaurant["results"] %></p>
+		<p><%= restaurant["inspection_date"]%></p>
+		<% if restaurant.key?("violations") %>
+			<% restaurant["violations"].each do |violation| %>
+				<p><%= violation %></p>
+			<% end %>
+		<% end %>
+	<% end %>
+<% end %>
