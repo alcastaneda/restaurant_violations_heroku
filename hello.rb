@@ -1,6 +1,20 @@
 require 'sinatra'
 require 'httparty'
 
+def sanitize_form(form_params)
+	sanitized_params = form_params.each{|k,v| form_params.delete(k) if v.length==0}
+	if sanitized_params.key?("Zip")
+		sanitized_params["Zip"] = sanitized_params["Zip"].to_i
+	end
+	if sanitized_params.key?("AKA Name")
+		sanitized_params["AKA Name"] = sanitized_params["AKA Name"].upcase
+	end
+	if sanitized_params.key?("Address")
+		sanitized_params["Address"] = sanitized_params["Address"].upcase
+	end
+	return sanitized_params
+end
+
 def find_restaurants(params)
 	request = HTTParty.get('https://data.cityofchicago.org/resource/cwig-ma7x.json', 
 		{headers: {"X-App-Token": ENV['SODA_API_KEY']},
@@ -18,6 +32,7 @@ get '/' do
 end
 
 get	'/results' do
-	@results = find_restaurants(params[:restaurant])
+	sanitized = sanitize_form(params[:restaurant])
+	@results = find_restaurants(sanitized)
 	erb :results
 end
