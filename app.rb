@@ -1,5 +1,7 @@
 require 'sinatra'
 require 'httparty'
+require 'dotenv/load'
+require 'json'
 
 def sanitize_form(form_params)
 	sanitized_params = form_params.each{|k,v| form_params.delete(k) if v.length==0}
