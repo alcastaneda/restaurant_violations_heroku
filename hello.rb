@@ -49,5 +49,9 @@ end
 get	'/results' do
 	sanitized = sanitize_form(params[:restaurant])
 	@results = find_restaurants(sanitized)
-	erb :results
+	if request.xhr?
+		erb :results, :layout=>false
+	else
+		erb :results
+	end
 end
