@@ -10,5 +10,18 @@ $(document).ready(function(){
 	    }
 	  });
 	});
+	
+	$('input[type="submit"]').on("click", function(event){
+	  event.preventDefault();
+	  console.log('click');
+	  $.ajax({
+	    url: "/results",
+	    data: $('form').serialize(),
+	    dataType: "html",
+	    success: function(data){
+	      $('#results').html(data);
+	    }
+	  }).done()
+	});
 
 });
