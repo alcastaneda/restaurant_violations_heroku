@@ -32,7 +32,7 @@ def format_results(restaurants)
 	return results
 end
 
-def find_restaurants(params)
+def find_restaurants(sanitized_params)
 	request = HTTParty.get('https://data.cityofchicago.org/resource/cwig-ma7x.json', 
 		{headers: {"X-App-Token": ENV['SODA_API_KEY']},
 		query: sanitized_params})
