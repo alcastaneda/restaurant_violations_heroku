@@ -24,6 +24,7 @@ def format_results(restaurants)
 		end
 		results<<restaurant
 	end
+	p results
 	return results
 end
 
