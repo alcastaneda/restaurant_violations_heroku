@@ -34,7 +34,7 @@ header{
 header h1{
 	font-family: 'Oswald', sans-serif;
 	font-size:3rem;
-	color: #353433;
+	color: #5d0f0f;
 }
 
 header h3{
@@ -42,7 +42,7 @@ header h3{
 	font-size:2rem;
 	text-align:right;
 	padding-right:20%;
-	color: #353433;
+	color: #c1762a;
 }
 
 form{
