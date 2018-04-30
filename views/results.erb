@@ -6,8 +6,8 @@
 			<article>
 				<h3><%= restaurant["aka_name"] %></h3>
 				<h6><%= restaurant["address"] %></h6>
-				<p><%= restaurant["results"] %></p>
-				<p><%= restaurant["inspection_date"]%></p>
+				<h6><%= restaurant["results"] %></h6>
+				<h6><%= restaurant["inspection_date"]%></h6>
 				<% if restaurant.key?("violations") %>
 					<% restaurant["violations"].each do |violation| %>
 						<p><%= violation %></p>

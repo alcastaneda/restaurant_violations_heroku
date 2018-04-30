@@ -61,3 +61,23 @@ div{
 	display: block;
 	margin-top: 1rem;
 }
+
+article{
+	width: 80%;
+    margin: 3rem auto;
+    background: white;
+    padding: 1rem;
+    border-radius:6px;
+}
+
+article h3{
+	font-size:1.5rem;
+}
+
+article h6{
+	font-size: 1rem;
+	-webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    margin-bottom: .5rem;
+    padding-left: 5%;
+}
