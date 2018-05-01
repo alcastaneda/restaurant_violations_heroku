@@ -6,8 +6,13 @@ require 'json'
 def sanitize_form(form_params)
 	sanitized_params = form_params.each{|k,v| form_params.delete(k) if v.length==0}
 	sanitized_params = sanitized_params.each{|k,v| p v.upcase!}
+	p sanitized_params
 	if sanitized_params.key?("Zip")
 		sanitized_params["Zip"] = sanitized_params["Zip"].to_i
+	end
+
+	if sanitized_params.key?("Address")
+		sanitized_params["Address"]= sanitized_params["Address"] + " "
 	end
 	return sanitized_params
 end
