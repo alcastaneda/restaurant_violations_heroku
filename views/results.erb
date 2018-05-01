@@ -1,6 +1,8 @@
 <section>
 	<% if @results.class == String %>
-		<h3><%= @results%></h3>
+		<article>
+			<h3><%= @results%></h3>
+		</article>
 	<% else %>
 		<% @results.each do |restaurant| %>
 			<article>
