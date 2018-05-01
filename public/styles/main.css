@@ -63,8 +63,9 @@ div{
 }
 
 article{
-	width: 80%;
+	width: 85%;
     margin: 3rem auto;
+    padding: 1rem 4rem 1rem 1rem;
     background: white;
     padding: 1rem;
     border-radius:6px;
@@ -80,4 +81,31 @@ article h6{
     -webkit-margin-after: 0em;
     margin-bottom: .5rem;
     padding-left: 5%;
+}
+
+
+#back-to-top{
+	position: fixed;
+    bottom: 2rem;
+    right: .5rem;
+    transform: rotate(45deg);
+    width: 2rem;
+    height: 2rem;
+    text-align: center;
+    border: solid 1px black;
+    background: white;
+}
+
+#back-to-top p{
+	transform: rotate(-45deg);
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    font-size: .8rem;
+    padding-top: 0.5rem;
+    padding-right: 0.2rem;
+}
+
+#back-to-top p a{
+	text-decoration: none;
+	color: black;
 }
